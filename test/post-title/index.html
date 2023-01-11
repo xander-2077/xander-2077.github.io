@@ -27,9 +27,8 @@
 <meta property="og:description" content="MANY YEARS LATER as he faced the firing squad, Colonel Aureliano Buendía was to remember that distant afternoon when his father took him to discover ice. At that time Macondo was a village of twenty a">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-01-10T03:41:36.000Z">
-<meta property="article:modified_time" content="2023-01-11T06:08:06.743Z">
+<meta property="article:modified_time" content="2023-01-11T07:07:52.554Z">
 <meta property="article:author" content="Xander">
-<meta property="article:tag" content="aaa">
 <meta name="twitter:card" content="summary">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -326,15 +325,13 @@
                     <div class= post-intro-tags >
     
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="aaa">aaa</a>
-    
 </div>
 
                 
                 <!-- 文章字数统计 -->
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">927</span>阅读时长: <span class="post-count reading-time">4 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">1.1k</span>阅读时长: <span class="post-count reading-time">5 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -505,8 +502,7 @@
 <p>这是一个内联公式 $a_c^t$</p>
 <script type="math/tex; mode=display">
 a_c</script><p>$\lim_{h \rightarrow 0 } \frac{f(x+h)-f(x)}{h}$</p>
-<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">a</span><span class="operator">=</span>b-c<span class="comment">;</span></span><br></pre></td></tr></table></figure>
-
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> copy</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> math</span><br><span class="line"><span class="keyword">import</span> time </span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line">result1 = np.load(<span class="string">&#x27;maddpg.npy&#x27;</span>)</span><br><span class="line">result2 = np.load(<span class="string">&#x27;maddpg_att.npy&#x27;</span>)</span><br><span class="line"></span><br><span class="line">r1_mean = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(result1)):</span><br><span class="line">    r1_mean.append(result1[i:i+<span class="number">20</span>].mean())</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">r2_mean = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(result2)):</span><br><span class="line">    r2_mean.append(result2[i:i+<span class="number">20</span>].mean())</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">plt.figure()</span><br><span class="line">plt.plot(result1, label=<span class="string">&#x27;reward&#x27;</span>)</span><br><span class="line">plt.plot(r1_mean, label=<span class="string">&#x27;mean_reward&#x27;</span>)</span><br><span class="line"></span><br><span class="line">plt.xlabel(<span class="string">&#x27;epoch&#x27;</span>, fontsize=<span class="number">16</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;reward&#x27;</span>, fontsize=<span class="number">16</span>)</span><br><span class="line">plt.legend(loc=<span class="string">&#x27;best&#x27;</span>)</span><br><span class="line"></span><br><span class="line">plt.figure()</span><br><span class="line">plt.plot(result2,  label=<span class="string">&#x27;reward&#x27;</span>)</span><br><span class="line">plt.plot(r2_mean,  label=<span class="string">&#x27;mean_reward&#x27;</span>)</span><br><span class="line"></span><br><span class="line">plt.xlabel(<span class="string">&#x27;epoch&#x27;</span>, fontsize=<span class="number">16</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;reward&#x27;</span>, fontsize=<span class="number">16</span>)</span><br><span class="line">plt.legend(loc=<span class="string">&#x27;best&#x27;</span>)</span><br><span class="line"></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
     </article>
     <!-- license -->
     
@@ -526,6 +522,26 @@ a_c</script><p>$\lim_{h \rightarrow 0 } \frac{f(x+h)-f(x)}{h}$</p>
 
 
             
+    <div id="disqus_thread"></div>
+    <script>
+        /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+        
+        var disqus_config = function () {
+        this.page.url = "https://xander-2077.github.io/test/post-title/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "post title"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        
+        (function () { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://xanders-blog-1.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
 
             
 
@@ -540,22 +556,6 @@ a_c</script><p>$\lim_{h \rightarrow 0 } \frac{f(x+h)-f(x)}{h}$</p>
 
             
             
-    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-    <div id="comment"></div>
-    <script>
-        new Valine({
-            el: '#comment',
-            notify:false,
-            verify:false,
-            appId: "g3ynhRZw44yxcQMBP7V5bTxc-MdYXbMMI",
-            appKey: "pHRjgI6FFEIM0KcjzlWIDb36",
-            placeholder: "请友善留言噢~",
-            path:window.location.pathname,
-            avatar:'mm'
-        });
-    </script>
-
 
             
 
@@ -714,11 +714,6 @@ a_c</script><p>$\lim_{h \rightarrow 0 } \frac{f(x+h)-f(x)}{h}$</p>
 
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
-        
-            <span class="sidebar-tag-name" data-tags="aaa">
-                <span class="iconfont-archer">&#xe606;</span>
-                aaa
-            </span>
         
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
